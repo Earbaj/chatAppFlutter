@@ -21,10 +21,6 @@ class MyApp extends StatelessWidget {
       ),
       home: Scaffold(
         backgroundColor: Colors.amber,
-        appBar: AppBar(
-          elevation: 0,
-          title: Text("Chat app"),
-        ),
         body: Authentication(),
       ),
     );
