@@ -2,6 +2,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 
 class AuthForm extends StatefulWidget {
+      // Funtion for passing data between activity
       final void Function(
           String email,
           String password,
@@ -25,6 +26,7 @@ class _AuthFormState extends State<AuthForm> {
   String _userName = '';
   String _userPassword = '';
 
+  //Function for submitting user name pass and also check text validation
   void _trySubmit() {
     final validate = _formKey.currentState!.validate();
     FocusScope.of(context).unfocus();

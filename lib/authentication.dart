@@ -47,6 +47,7 @@ class _AuthenticationState extends State<Authentication> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.amber,
       body: StreamBuilder(
         stream: FirebaseAuth.instance.authStateChanges(),
         builder: (ctx, snapShot){
