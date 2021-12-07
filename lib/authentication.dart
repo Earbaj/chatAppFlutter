@@ -2,6 +2,9 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
+import 'auth_form.dart';
+import 'message_screen.dart';
+
 final _auth = FirebaseAuth.instance;
 
 class Authentication extends StatefulWidget {
@@ -43,6 +46,16 @@ class _AuthenticationState extends State<Authentication> {
   }
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      body: StreamBuilder(
+        stream: FirebaseAuth.instance.authStateChanges(),
+        builder: (ctx, snapShot){
+          if(snapShot.hasData){
+            return Message();
+          }
+          return AuthForm(_submitAuthForm,);
+        },
+      ),
+    );
   }
 }
