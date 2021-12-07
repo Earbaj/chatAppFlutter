@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
 import 'auth_form.dart';
+import 'authentication.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
           elevation: 0,
           title: Text("Chat app"),
         ),
-        body: AuthForm(),
+        body: Authentication(),
       ),
     );
   }

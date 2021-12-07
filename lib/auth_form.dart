@@ -2,13 +2,15 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 
 class AuthForm extends StatefulWidget {
-  AuthForm(
-      void Function(
+      final void Function(
           String email,
           String password,
           String username,
           bool islogin,
-          BuildContext ctx) submitAuthForm);
+          BuildContext ctx) submitAuthForm;
+
+
+      AuthForm(this.submitAuthForm);
 
   @override
   _AuthFormState createState() => _AuthFormState();
@@ -22,6 +24,16 @@ class _AuthFormState extends State<AuthForm> {
   String _userEmail = '';
   String _userName = '';
   String _userPassword = '';
+
+  void _trySubmit() {
+    final validate = _formKey.currentState!.validate();
+    FocusScope.of(context).unfocus();
+    if (validate) {
+      _formKey.currentState!.save();
+      widget.submitAuthForm(_userEmail, _userPassword, _userName, _isLogin, context);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -83,6 +95,7 @@ class _AuthFormState extends State<AuthForm> {
                     ),
                     RaisedButton(
                       onPressed: () {
+                        _trySubmit();
                       },
                       child: Text(_isLogin ? "Log in" : "Sign in"),
                     ),

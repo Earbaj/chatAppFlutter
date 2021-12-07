@@ -53,7 +53,7 @@ class _AuthenticationState extends State<Authentication> {
           if(snapShot.hasData){
             return Message();
           }
-          return AuthForm(_submitAuthForm,);
+          return AuthForm(_submitAuthForm);
         },
       ),
     );
