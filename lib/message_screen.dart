@@ -27,7 +27,11 @@ class _MessageState extends State<Message> {
       ),
       body: Container(
         alignment: Alignment.bottomCenter,
-        child: Message_Bottom_Design(),
+        child: Column(
+          children: [
+            Message_Bottom_Design(),
+          ],
+        ),
       ),
     );
   }
