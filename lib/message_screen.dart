@@ -1,16 +1,17 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
+import 'message_list.dart';
 import 'message_text_button_design.dart';
 
-class Message extends StatefulWidget {
-  const Message({Key? key}) : super(key: key);
+class MessageScreen extends StatefulWidget {
+  const MessageScreen({Key? key}) : super(key: key);
 
   @override
-  _MessageState createState() => _MessageState();
+  _MessageScreenState createState() => _MessageScreenState();
 }
 
-class _MessageState extends State<Message> {
+class _MessageScreenState extends State<MessageScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,9 +27,9 @@ class _MessageState extends State<Message> {
         ],
       ),
       body: Container(
-        alignment: Alignment.bottomCenter,
         child: Column(
           children: [
+            Expanded(child: MessageList()),
             Message_Bottom_Design(),
           ],
         ),

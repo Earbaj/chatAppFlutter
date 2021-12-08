@@ -1,7 +1,10 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-class Message extends StatelessWidget {
+import 'message_design.dart';
+
+
+class MessageList extends StatelessWidget {
   final auth = FirebaseAuth.instance.currentUser!;
   @override
   Widget build(BuildContext context){

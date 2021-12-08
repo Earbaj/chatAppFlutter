@@ -52,7 +52,7 @@ class _AuthenticationState extends State<Authentication> {
         stream: FirebaseAuth.instance.authStateChanges(),
         builder: (ctx, snapShot){
           if(snapShot.hasData){
-            return Message();
+            return MessageScreen();
           }
           return AuthForm(_submitAuthForm);
         },
